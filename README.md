@@ -5,7 +5,7 @@ expuesto vía Cloudflare tunnel. Permite que servicios cloud (ej. PDFexport, con
 bloqueada por YouTube) hagan requests a través de la IP local de este servidor.
 
 ```
-PDFexport (cloud) → HTTPS → Cloudflare tunnel → xero-proxy (on-prem) → YouTube/internet
+PDFexport (cloud) → HTTPS → Cloudflare tunnel → mini-proxy (on-prem) → YouTube/internet
 ```
 
 ## Modos
@@ -65,7 +65,7 @@ tunnel: <TUNNEL_ID>
 credentials-file: /root/.cloudflared/<TUNNEL_ID>.json
 
 ingress:
-  - hostname: proxy-s12.xero-one.com
+  - hostname: mini-proxy.midominio.com
     service: http://localhost:8080
   - service: http_status:404
 ```
@@ -81,7 +81,7 @@ cloudflared tunnel run <TUNNEL_ID>
 En el `.env` de PDFexport:
 
 ```env
-YOUTUBE_RELAY_URL=https://proxy-s12.xero-one.com
+YOUTUBE_RELAY_URL=https://mini-proxy.midominio.com
 YOUTUBE_RELAY_TOKEN=<mismo valor que PROXY_TOKEN>
 ```
 
