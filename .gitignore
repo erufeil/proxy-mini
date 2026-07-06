@@ -1,4 +1,36 @@
+# Variables locales y secretos
 .env
+.env.*
+!.env.example
+
+# Entornos virtuales y dependencias locales
+.venv/
+venv/
+env/
+
+# Python cache y artefactos
 __pycache__/
 *.pyc
-.venv/
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Archivos generados por herramientas y documentación local
+CLAUDE*
+graphify-out/
+
+# Carpetas de sistema y editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+.claude/
+

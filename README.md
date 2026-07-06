@@ -1,4 +1,4 @@
-# xero-proxy
+# mini-proxy
 
 Servicio relay HTTP ligero y seguro. Corre on-premise (con IP residencial/empresarial),
 expuesto vía Cloudflare tunnel. Permite que servicios cloud (ej. PDFexport, con IP
