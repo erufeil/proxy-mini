@@ -5,7 +5,8 @@ expuesto vía Cloudflare tunnel. Permite que servicios cloud (ej. PDFexport, con
 bloqueada por YouTube) hagan requests a través de la IP local de este servidor.
 
 ```
-IPbanneada (cloud) → HTTPS → Cloudflare tunnel → mini-proxy (on-prem) → IP no banneada → internet
+IPbanneada → HTTPS → Cloudflare → mini-proxy → IP no banneada → internet
+ (cloud)               tunnel     (on-prem) 
 ```
 
 ## Modos
