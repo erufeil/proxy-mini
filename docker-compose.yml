@@ -1,8 +1,16 @@
 services:
-  xero-proxy:
+  mini-proxy:
+    container_name: mini-proxy
     build: .
     ports:
       - "${PROXY_RELAY_PORT:-8080}:${PROXY_RELAY_PORT:-8080}"     # REST relay
       - "${PROXY_CONNECT_PORT:-8888}:${PROXY_CONNECT_PORT:-8888}" # CONNECT proxy (si PROXY_CONNECT_ENABLED=true)
     env_file: .env
     restart: unless-stopped
+    networks: 
+      ai-network:
+        ipv4_address: 172.18.0.29
+
+networks: 
+  ai-network:
+    external: true
